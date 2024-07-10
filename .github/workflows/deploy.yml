@@ -1,0 +1,76 @@
+name: Deploy Spring Boot Application to Ubuntu
+
+on:
+  push:
+    branches: [ 'develop' ]
+  pull_request:
+    branches: [ 'develop' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build And Test
+        run: ./gradlew clean build
+
+      - name: Renaming build file
+        run: sudo mv ./build/libs/*SNAPSHOT.jar ./project.jar
+
+      - name: SCP to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.LOCAL_HOST }}
+          username: ${{ secrets.LOCAL_USERNAME }}
+          key: ${{ secrets.LOCAL_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          source: project.jar
+          target: /home/likelion/hackerton/backend-server/tobe
+
+      - name: SSH to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.LOCAL_HOST }}
+          username: ${{ secrets.LOCAL_USERNAME }}
+          key: ${{ secrets.LOCAL_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script_stop: true
+          script: |
+            # 기존 current 폴더 삭제
+            sudo rm -rf /home/likelion/hackerton/backend-server/current
+            
+            # 새로운 current 폴더 생성
+            sudo mkdir -p /home/likelion/hackerton/backend-server/current
+            
+            # tobe 폴더에서 current 폴더로 이동
+            sudo mv /home/likelion/hackerton/backend-server/tobe/project.jar /home/likelion/hackerton/backend-server/current/project.jar
+            
+            # current 파일로 이동
+            cd /home/likelion/hackerton/backend-server/current
+            
+            # 기존 애플리케이션 종료
+            sudo fuser -k -n tcp 8080 || true
+            
+            # 현재 디렉토리 확인
+            pwd
+            
+            # 디렉토리 내 파일 목록 확인
+            sudo ls -la
+            
+            # 새로운 애플리케이션 시작
+            sudo nohup java -jar project.jar > ./output.log 2>&1 &
+            
+            # tobe 폴더 삭제
+            sudo rm -rf  /home/likelion/hackerton/backend-server/tobe
+            
+            # nginx 적용 및 재실행 
+            sudo nginx -t 
+            sudo systemctl restart nginx

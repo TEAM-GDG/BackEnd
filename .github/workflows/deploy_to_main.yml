@@ -1,0 +1,49 @@
+name: Deploy to Main Branch
+
+on:
+  push:
+    branches: [ 'main' ]
+  pull_request:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Create application.properties
+        run: echo "${{ secrets.APPLICATION_PROPERTIES }}" >./src/main/resource/application.properties
+
+      - name: Test And Build
+        run: ./gradlew clean build
+
+      - name: Renaming build file
+        run: mv ./build/libs/*SNAPSHOT.jar ./project.jar
+
+      - name: 압축하기
+        run: tar -czvf $GITHUB_SHA.tar.gz project.jar appspec.yml scripts
+
+      - name: AWS Resources에 접근할 수 있게 AWS credentials 설정
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-northeast-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: S3에 프로젝트 폴더 업로드 하기
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.tar.gz s3://likelion-hackathon-server/$GITHUB_SHA.tar.gz
+
+      - name: Code Deploy를 활용해 EC2에 프로젝트 코드 배포
+        run: aws deploy create-deployment
+          --application-name likelion-hackathon-server
+          --deployment-config-name CodeDeployDefault.AllAtOnce
+          --deployment-group-name Production
+          --s3-location bucket=likelion-hackathon-server,bundleType=tgz,key=$GITHUB_SHA.tar.gz
