@@ -58,11 +58,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1721914185" />
+                    <option name="lastUsedInstant" value="1721999265" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1721914155" />
+                    <option name="lastUsedInstant" value="1721724291" />
                   </RecentBranch>
                 </list>
               </option>
@@ -77,8 +77,8 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
+        &quot;associatedIndex&quot;: 7
+        }</component>
   <component name="ProjectId" id="2jbPVsj9XJVe1sqNk2CDY5oFl4p" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -99,7 +99,7 @@
     &quot;Spring Boot.HackathonApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hansanghui/BackEnd&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kimdohun/Desktop/LikeLion/backend-server&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -108,7 +108,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -137,15 +137,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.HackathonApplication" />
-        <item itemvalue="Spring Boot.HackathonApplication" />
-        <item itemvalue="Spring Boot.HackathonApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -172,7 +171,9 @@
       <workItem from="1721731299841" duration="580000" />
       <workItem from="1721731893011" duration="1654000" />
       <workItem from="1721733566218" duration="5174000" />
-      <workItem from="1721822311017" duration="3070000" />
+      <workItem from="1721822311017" duration="2147000" />
+      <workItem from="1721914414498" duration="10000" />
+      <workItem from="1721914492064" duration="2003000" />
     </task>
     <servers />
   </component>

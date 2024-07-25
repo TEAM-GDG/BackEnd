@@ -1,0 +1,36 @@
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/.github/workflows/deploy.yml\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/.github/workflows/deploy_to_main.yml\" charset=\"UTF-8\" />\r\n<<<<<<< HEAD\r\n    <file url=\"file://$PROJECT_DIR$/appspec.yml\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/scripts/start-server.sh\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/ApplicationTest.java\" charset=\"UTF-8\" />\r\n=======\r\n    <file url=\"file://$PROJECT_DIR$/Dockerfile\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/HELP.md\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/README.md\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/appspec.yml\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/build.gradle\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/dd.txt\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/gradlew\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/scirpts/start-server.sh\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/scripts/start-server.sh\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/settings.gradle\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/ApplicationTest.java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/HackathonApplication.java\" charset=\"UTF-8\" />\r\n>>>>>>> develop\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	
++++ b/.idea/encodings.xml	
+@@ -3,23 +3,8 @@
+   <component name="Encoding">
+     <file url="file://$PROJECT_DIR$/.github/workflows/deploy.yml" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/.github/workflows/deploy_to_main.yml" charset="UTF-8" />
+-<<<<<<< HEAD
+-    <file url="file://$PROJECT_DIR$/appspec.yml" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/scripts/start-server.sh" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/ApplicationTest.java" charset="UTF-8" />
+-=======
+-    <file url="file://$PROJECT_DIR$/Dockerfile" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/HELP.md" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/appspec.yml" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/build.gradle" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/dd.txt" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/gradlew" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/scirpts/start-server.sh" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/scripts/start-server.sh" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/settings.gradle" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/ApplicationTest.java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/HackathonApplication.java" charset="UTF-8" />
+->>>>>>> develop
++    <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file

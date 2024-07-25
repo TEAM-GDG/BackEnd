@@ -1,0 +1,16 @@
+Index: .idea/modules/hackathon.iml
+===================================================================
+diff --git a/.idea/modules/hackathon.iml b/.idea/modules/hackathon.iml
+deleted file mode 100644
+--- a/.idea/modules/hackathon.iml	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="AdditionalModuleElements">
+-    <content url="file://$MODULE_DIR$/../.." dumb="true">
+-      <sourceFolder url="file://$MODULE_DIR$/../.." isTestSource="false" />
+-    </content>
+-  </component>
+-</module>
+\ No newline at end of file
