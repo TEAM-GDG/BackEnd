@@ -18,7 +18,11 @@ jobs:
           java-version: 17
 
       - name: Create application.properties
-        run: echo "${{ secrets.APPLICATION_PROPERTIES }}" >./src/main/resource/application.properties
+        run: | # 디렉토리 생성 (이미 존재하면 무시)
+          mkdir -p ./src/main/resources  
+          # 파일에 덮어쓰기
+          echo "${{ secrets.APPLICATION_PROPERTIES }}" > ./src/main/resources/application.properties
+      
 
       - name: Test And Build
         run: ./gradlew clean build
