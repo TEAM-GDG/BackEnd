@@ -34,6 +34,15 @@ dependencies {
 
 	// jBCrypt
 	implementation 'org.mindrot:jbcrypt:0.4'
+
+	// Jakarta Mail Implementation
+	implementation 'com.sun.mail:jakarta.mail:2.0.1'
+
+	// Spring Context Support
+	implementation 'org.springframework:spring-context-support:6.1.4'
+
+	// redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 }
 
 test {
