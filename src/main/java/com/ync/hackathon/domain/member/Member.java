@@ -55,4 +55,6 @@ public class Member {
     @Column(name = "last_record_date")
     private LocalDate lastRecordDate;
 
+    @Enumerated(EnumType.STRING)
+    private UserRole role; // ROLE_USER, ROLE_ADMIN, ROLE_MANAGER
 }

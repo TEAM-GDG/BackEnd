@@ -19,10 +19,21 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/HackathonApplication.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/application/MemberLoginService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/application/MemberRegisterService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/domain/member/UserRole.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/config/SecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/config/WebConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/repository/MemberRepository.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/util/VerificationCodeGenerator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/controller/EmailFindController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/controller/MemberLoginController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/controller/MemberRegisterController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/controller/PasswordResetController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/request/MemberFindPwdByEmailRequestDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/request/MemberLoginRequestDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/request/MemberRegisterRequestDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/response/MemberLoginResponseDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/response/MemberRegisterResponseDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/response/MessageResponse.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/testUser/TestUserService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/ync/hackathon/databaseConnectionTest/DatabaseConnectionTest.java" charset="UTF-8" />
