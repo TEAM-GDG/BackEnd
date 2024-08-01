@@ -1,4 +1,4 @@
-package com.ync.hackathon.controller;
+package com.ync.hackathon.presentation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +8,4 @@ import lombok.Data;
 public class LoginResponse {
     private String message;
     private String sessionId;
-
-    public LoginResponse(String message) {
-        this.message = message;
-    }
 }

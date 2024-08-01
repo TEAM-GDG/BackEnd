@@ -1,4 +1,4 @@
-package com.ync.hackathon.controller;
+package com.ync.hackathon.presentation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

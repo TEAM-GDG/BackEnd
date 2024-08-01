@@ -1,4 +1,4 @@
-package com.ync.hackathon.domain;
+package com.ync.hackathon.domain.member;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberForm {
+public class Member {
 
     @Id
     @Column(name = "user_uuid", length = 36, nullable = false)
