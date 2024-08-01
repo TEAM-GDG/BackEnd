@@ -5,7 +5,11 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class LoginResponse {
+public class MemberLoginResponseDto {
     private String message;
     private String sessionId;
+
+    public MemberLoginResponseDto(String message) {
+        this.message = message;
+    }
 }

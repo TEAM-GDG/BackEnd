@@ -5,7 +5,13 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class RegisterResponse {
+public class MemberRegisterResponseDto {
     private String message;
     private String userUuid;
+
+    public MemberRegisterResponseDto(String message) {
+        this.message = message;
+    }
 }
+
+

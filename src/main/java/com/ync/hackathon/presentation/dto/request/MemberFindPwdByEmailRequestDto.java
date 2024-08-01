@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FindPwdByEmailRequest {
+public class MemberFindPwdByEmailRequestDto {
 
     @NotBlank(message = "이름을 입력해 주세요")
     @Size(min = 2, max = 10, message = "이름은 2자 이상 10자 이하이어야 합니다.")

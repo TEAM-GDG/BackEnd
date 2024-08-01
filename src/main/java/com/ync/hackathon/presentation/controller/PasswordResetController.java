@@ -1,6 +1,6 @@
 package com.ync.hackathon.presentation.controller;
 
-import com.ync.hackathon.presentation.dto.request.FindPwdByEmailRequest;
+import com.ync.hackathon.presentation.dto.request.MemberFindPwdByEmailRequestDto;
 import com.ync.hackathon.application.MailService;
 import com.ync.hackathon.application.MemberService;
 import com.ync.hackathon.application.VerificationService;
@@ -20,7 +20,7 @@ public class PasswordResetController {
     private final VerificationService verificationService;
 
     @PostMapping("/sendMailForPasswordReset")
-    public ResponseEntity<MessageResponse> sendMailForPasswordReset(@Valid @RequestBody FindPwdByEmailRequest request) {
+    public ResponseEntity<MessageResponse> sendMailForPasswordReset(@Valid @RequestBody MemberFindPwdByEmailRequestDto request) {
         boolean memberExists = memberService.isMemberExists(request.getName(), request.getEmail(), request.getPhone());
 
         if (!memberExists) {

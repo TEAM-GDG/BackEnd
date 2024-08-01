@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class RegisterRequest {
+public class MemberRegisterRequestDto {
 
     @NotBlank(message = "이름을 입력해 주세요")
     @Size(min = 2, max = 10, message = "이름은 2자 이상 10자 이하이어야 합니다.")
@@ -19,7 +19,8 @@ public class RegisterRequest {
     private LocalDate birth;
 
     @NotBlank(message = "비밀번호를 입력해 주세요")
-    @Size(min = 8, max = 255, message = "비밀번호는 8자 이상이어야 합니다.")
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$",
+            message = "비밀번호는 8자 이상 20자 이하의 영문자, 숫자, 특수문자를 포함해야 합니다.")
     private String pwd;
 
     @NotBlank(message = "이메일을 입력해 주세요")

@@ -16,42 +16,7 @@ import java.util.UUID;
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    //회원가입
-    public Member register(String name, LocalDate birth, String pwd, String email, Integer companyId, String phone) {
-        String hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
 
-        Member member = new Member();
-        member.setUserUuid(UUID.randomUUID().toString());
-        member.setName(name);
-        member.setBirth(birth);
-        member.setPwd(hashedPwd);
-        member.setEmail(email);
-        member.setCompanyId(companyId);
-        member.setPhone(phone);
-        member.setGrade("General");
-        member.setPoints(0);
-        member.setSignupDate(LocalDateTime.now());
-        member.setStreakCount(0);
-
-        return memberRepository.save(member);
-    }
-
-    //이메일로 회원 찾기
-    public Optional<Member> findByEmail(String email) {
-        return memberRepository.findByEmail(email);
-    }
-
-    //로그인
-    public Member login(String email, String password) {
-        Optional<Member> optionalMember = memberRepository.findByEmail(email);
-        if (optionalMember.isPresent()) {
-            Member member = optionalMember.get();
-            if (BCrypt.checkpw(password, member.getPwd())) {
-                return member;
-            }
-        }
-        return null;
-    }
 
     //비밀번호 변경
     public boolean changePassword(String email, String newPassword) {
