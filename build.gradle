@@ -1,15 +1,16 @@
 plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
 	id 'java'
-	id 'org.springframework.boot' version '3.3.2'
-	id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'com.ync'
+group = 'login'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
 	}
 }
 
@@ -18,37 +19,22 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-	// MySql
-	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
-
-	// Lombok
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-
-	// jBCrypt
-	implementation 'org.mindrot:jbcrypt:0.4'
-
-	// Jakarta Mail Implementation
-	implementation 'com.sun.mail:jakarta.mail:2.0.1'
-
-	// Spring Context Support
-	implementation 'org.springframework:spring-context-support:6.1.4'
-
-	// security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	testImplementation 'org.springframework.security:spring-security-test'
-
-	// oauth
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.auth0:java-jwt:4.2.1'
+	compileOnly 'org.projectlombok:lombok'
+//	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'mysql:mysql-connector-java:8.0.32'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
-test {
+tasks.named('test') {
 	useJUnitPlatform()
 }
