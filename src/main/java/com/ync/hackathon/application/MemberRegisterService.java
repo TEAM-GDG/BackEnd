@@ -18,18 +18,17 @@ public class MemberRegisterService {
 
     //회원가입
     public MemberRegisterResponseDto register(MemberRegisterRequestDto requestDto) {
-        if (isEmailExist(requestDto.getEmail())) {
+        if (isEmailExist(requestDto.getUserId())) {
             return new MemberRegisterResponseDto("이미 존재하는 이메일입니다.");
         }
 
         String hashedPwd = BCrypt.hashpw(requestDto.getPwd(), BCrypt.gensalt());
 
         Member member = new Member();
-        member.setUserUuid(UUID.randomUUID().toString());
         member.setName(requestDto.getName());
         member.setBirth(requestDto.getBirth());
         member.setPwd(hashedPwd);
-        member.setEmail(requestDto.getEmail());
+        member.setUserId(requestDto.getUserId());
         member.setCompanyId(requestDto.getCompanyId());
         member.setPhone(requestDto.getPhone());
         member.setGrade("General");
@@ -39,12 +38,12 @@ public class MemberRegisterService {
 
         memberRepository.save(member);
 
-        return new MemberRegisterResponseDto("회원가입 성공", member.getUserUuid());
+        return new MemberRegisterResponseDto("회원가입 성공", member.getUserId());
     }
 
     //이메일로 회원 찾기
     public boolean isEmailExist(String email) {
-        return memberRepository.findByEmail(email).isPresent();
+        return memberRepository.findByUserId(email).isPresent();
     }
 
 }

@@ -22,7 +22,7 @@ public class MemberLoginService {
 
     //로그인
     public MemberLoginResponseDto login(MemberLoginRequestDto requestDto) {
-        Optional<Member> optionalMember = memberRepository.findByEmail(requestDto.getEmail());
+        Optional<Member> optionalMember = memberRepository.findByUserId(requestDto.getEmail());
         Member member = null;
 
         if (optionalMember.isPresent()) {

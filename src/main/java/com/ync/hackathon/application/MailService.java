@@ -3,19 +3,16 @@ package com.ync.hackathon.application;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
 public class MailService {
     private final JavaMailSender mailSender;
-    private final RedisTemplate<String, String> redisTemplate;
 
     // 비밀번호 재설정 링크 전송
     public void sendPasswordResetEmail(String email) {
@@ -29,7 +26,6 @@ public class MailService {
 
         sendEmail(email, subject, content);
 
-        redisTemplate.opsForValue().set(resetToken, email, 10, TimeUnit.MINUTES);
     }
 
     private void sendEmail(String to, String subject, String content) {

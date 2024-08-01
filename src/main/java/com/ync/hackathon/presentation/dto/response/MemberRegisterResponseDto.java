@@ -7,7 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class MemberRegisterResponseDto {
     private String message;
-    private String userUuid;
+    private String userId;
 
     public MemberRegisterResponseDto(String message) {
         this.message = message;

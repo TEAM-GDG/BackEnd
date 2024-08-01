@@ -1,9 +1,6 @@
 package com.ync.hackathon.domain.member;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,8 +18,8 @@ import java.time.LocalDateTime;
 public class Member {
 
     @Id
-    @Column(name = "user_uuid", length = 36, nullable = false)
-    private String userUuid;
+    @Column(name = "userId", length = 255, nullable = false)
+    private String userId;
 
     @Column(name = "name", length = 10, nullable = false)
     private String name;
@@ -33,15 +30,13 @@ public class Member {
     @Column(name = "pwd", length = 255, nullable = false)
     private String pwd;
 
-    @Column(name = "email", length = 255, nullable = false)
-    private String email;
-
     @Column(name = "company_id")
     private Integer companyId;
 
-    @Column(name = "phone", length = 15, nullable = false)
+    @Column(name = "phone", unique = true, length = 15, nullable = false)
     private String phone;
 
+    // 회원 등급
     @Column(name = "grade", length = 20, nullable = false)
     private String grade;
 

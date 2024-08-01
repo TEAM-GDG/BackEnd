@@ -8,12 +8,23 @@
     <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/appspec.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/build.gradle" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/build/resources/main/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dd.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gradlew" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gradlew.bat" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scirpts/start-server.sh" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scripts/start-server.sh" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/settings.gradle" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/ApplicationTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/HackathonApplication.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/application/MemberLoginService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/application/MemberRegisterService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/config/SecurityConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/config/WebConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/repository/MemberRepository.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/infrastructure/util/VerificationCodeGenerator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/testUser/TestUserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/ync/hackathon/databaseConnectionTest/DatabaseConnectionTest.java" charset="UTF-8" />
   </component>
 </project>
