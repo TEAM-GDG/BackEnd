@@ -8,8 +8,4 @@ import lombok.Data;
 public class LoginResponse {
     private String message;
     private String sessionId;
-
-    public LoginResponse(String message) {
-        this.message = message;
-    }
 }

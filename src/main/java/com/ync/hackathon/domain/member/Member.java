@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterForm {
+public class Member {
 
     @Id
     @Column(name = "user_uuid", length = 36, nullable = false)
