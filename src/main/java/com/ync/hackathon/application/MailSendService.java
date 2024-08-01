@@ -1,5 +1,8 @@
 package com.ync.hackathon.application;
 
+import com.ync.hackathon.infrastructure.repository.MemberRepository;
+import com.ync.hackathon.presentation.dto.request.MemberFindPwdByEmailRequestDto;
+import com.ync.hackathon.presentation.dto.response.MessageResponseDto;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +16,17 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
-public class MailService {
+public class MailSendService {
     private final JavaMailSender mailSender;
     private final RedisTemplate<String, String> redisTemplate;
+    private final MemberRepository memberRepository;
 
     // 비밀번호 재설정 링크 전송
-    public void sendPasswordResetEmail(String email) {
+    public MessageResponseDto sendPasswordResetEmail(MemberFindPwdByEmailRequestDto requestDto) {
+        if (!memberRepository.findByNameAndEmailAndPhone(requestDto.getName(), requestDto.getEmail(), requestDto.getPhone()).isPresent()) {
+            return new MessageResponseDto("해당 정보로 사용자를 찾을 수 없습니다.");
+        }
+
         String resetToken = UUID.randomUUID().toString();
         String resetLink = "http://localhost:8080/membersResetPassword?token=" + resetToken;
 
@@ -27,9 +35,11 @@ public class MailService {
                 "아래 링크를 클릭하여 비밀번호를 재설정하세요.<br>" +
                 "<a href=\"%s\">비밀번호 재설정</a>", resetLink);
 
-        sendEmail(email, subject, content);
+        sendEmail(requestDto.getEmail(), subject, content);
 
-        redisTemplate.opsForValue().set(resetToken, email, 10, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(resetToken, requestDto.getEmail(), 10, TimeUnit.MINUTES);
+
+        return new MessageResponseDto("비밀번호 재설정 링크를 다음 메일로 전송하였습니다. : " + requestDto.getEmail());
     }
 
     private void sendEmail(String to, String subject, String content) {
