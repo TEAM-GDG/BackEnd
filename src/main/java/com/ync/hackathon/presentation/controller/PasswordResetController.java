@@ -1,21 +1,15 @@
 package com.ync.hackathon.presentation.controller;
 
-import com.ync.hackathon.presentation.dto.request.MemberFindPwdByEmailRequestDto;
+import com.ync.hackathon.application.UserService;
 import com.ync.hackathon.application.MailService;
-import com.ync.hackathon.application.MemberService;
-import com.ync.hackathon.application.VerificationService;
-import com.ync.hackathon.presentation.dto.response.MessageResponse;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 public class PasswordResetController {
 
-    private final MemberService memberService;
+    private final UserService userService;
     private final MailService mailService;
 
 //    @PostMapping("/sendMailForPasswordReset")
