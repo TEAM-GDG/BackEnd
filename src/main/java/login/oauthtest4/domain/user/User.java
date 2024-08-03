@@ -4,6 +4,10 @@ import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -18,15 +22,21 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @Column(unique = true)
     private String email; // 이메일
+
+    @NotBlank
     private String password; // 비밀번호
+
     private String nickname; // 닉네임
+
     private String imageUrl; // 프로필 이미지
-    private int age;
-    private String city; // 사는 도시
+
+
+    private int age; // 나이
 
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role; // 권한 (가입 시 기본 User)
 
     @Enumerated(EnumType.STRING)
     private SocialType socialType; // KAKAO, NAVER, GOOGLE
@@ -54,9 +64,6 @@ public class User {
         this.age = updateAge;
     }
 
-    public void updateCity(String updateCity) {
-        this.city = updateCity;
-    }
 
     public void updatePassword(String updatePassword, PasswordEncoder passwordEncoder) {
         this.password = passwordEncoder.encode(updatePassword);
