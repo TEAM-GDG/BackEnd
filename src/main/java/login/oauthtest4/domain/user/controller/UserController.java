@@ -3,6 +3,7 @@ package login.oauthtest4.domain.user.controller;
 import login.oauthtest4.domain.user.dto.UserSignUpDto;
 import login.oauthtest4.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +15,9 @@ public class UserController {
 
     private final UserService userService;
 
+    // 회원가입 검증검사 및 Dto 사용
     @PostMapping("/sign-up")
-    public String signUp(@RequestBody UserSignUpDto userSignUpDto) throws Exception {
+    public String signUp(@Validated @RequestBody UserSignUpDto userSignUpDto) throws Exception {
         userService.signUp(userSignUpDto);
         return "회원가입 성공";
     }
