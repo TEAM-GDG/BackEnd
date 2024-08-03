@@ -29,14 +29,14 @@ public class MailService {
 
         String code = VerificationCodeGenerator.generate();
 
-        String subject = "[Moments] 회원가입을 위한 인증 코드입니다.";
+        String subject = "[moments] 회원가입을 위한 인증 코드입니다.";
 
         String content = String.format(
                 "<div style=\"font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;\">" +
                         "    <div style=\"text-align: center;\">" +
-                        "        <img src=\"https://i.postimg.cc/xCKWST1h/moments-logo.png\" alt=\"Moments 로고\" style=\"width: 150px; height: auto; margin-bottom: 20px;\" />" +
+                        "        <img src=\"https://i.postimg.cc/xCKWST1h/moments-logo.png\" alt=\"Moments 로고\" style=\"width: 150px; height: auto;\" />" +
                         "        <h2 style=\"color: #333;\">회원가입 인증 코드</h2>" +
-                        "        <p style=\"color: #666; font-size: 14px;\">Moments에 오신 것을 환영합니다! 아래의 인증 코드를 사용하여 회원가입을 완료하세요.</p>" +
+                        "        <p style=\"color: #666; font-size: 14px;\">moments에 오신 것을 환영합니다! 아래의 인증 코드를 사용하여 회원가입을 완료하세요.</p>" +
                         "    </div>" +
                         "    <div style=\"text-align: center; margin: 20px 0;\">" +
                         "        <h1 style=\"font-size: 32px; color: #ADC2A6; margin: 0;\">%s</h1>" +
