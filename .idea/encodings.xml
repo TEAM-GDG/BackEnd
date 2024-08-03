@@ -38,7 +38,15 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/response/UserLoginResponseDto.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/presentation/dto/response/UserRegisterResponseDto.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ync/hackathon/testUser/TestUserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/login/moments/domain/user/SocialType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/login/moments/domain/user/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/login/moments/domain/user/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/login/moments/domain/user/dto/UserSignUpDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/login/moments/momentsApplication.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application-jwt.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application-oauth.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/ync/hackathon/databaseConnectionTest/DatabaseConnectionTest.java" charset="UTF-8" />
   </component>
 </project>
