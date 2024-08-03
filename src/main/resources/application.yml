@@ -27,8 +27,19 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     properties:
       hibernate:
+        ddl-auto: update
         format_sql: true
         show_sql: true
 
-    hibernate:
-      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: likelionync.moments@gmail.com
+    password: rjpqoqbnaldtsqlk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
